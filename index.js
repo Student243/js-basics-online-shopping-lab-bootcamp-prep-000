@@ -55,6 +55,8 @@ function removeFromCart(item) {
     if(cart[i].item === item) {
       cart[i].count --;
       break;
+     } else
+     return `That item is not in your cart.`
     }
   }
 
