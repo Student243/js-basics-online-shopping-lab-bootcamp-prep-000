@@ -9,20 +9,52 @@ function setCart(c) {
   return cart;
 }
 
-function addToCart(item) {
- // write your code here
+function addToCart(name) {
+  var price = Math.floor((Math.random()* 100 ) + 1)
+ cart.push({itemName: name, itemPrice:price})
+ return `${name} has been added to your cart.` 
 }
 
+function generateCartDescription() {
+  cart = getCart()
+  var statement = `In your cart, you have`
+  if (cart.length === 1) {
+    for(var i = 0; i < cart.length; i++) {
+ statement += ` ${cart[i]["itemName"]} at $${cart[i]["itemPrice"]}` 
+ } 
+  }
+  if (cart.length === 2) {
+    for(var i = 0; i < cart.length - 1; i++) {
+ statement += ` ${cart[i]["itemName"]} at $${cart[i]["itemPrice"]}` 
+} 
+   statement += `, and ${cart[1]["itemName"]} at $${cart[1]["itemPrice"]}`
+  }
+  if (cart.length > 2) {
+    for(var i = 0; i < cart.length - 1; i++) {
+      statement += ` ${cart[i]["itemName"]} at $${cart[i]["itemPrice"]},` 
+    } 
+  return statement + ` and ${cart[cart.length - 1].itemName} at $${cart[cart.length -1].itemPrice}.`
+  }
+return statement + `.`
+} 
+
 function viewCart() {
-  // write your code here
+  return getCart().length === 0 ? `Your shopping cart is empty.` : generateCartDescription()
 }
 
 function total() {
-  // write your code here
+var total = 0
+for(var i = 0; i < getCart().length; i++) { 
+total += getCart()[i].itemPrice;
+}
+return total
 }
 
 function removeFromCart(item) {
-  // write your code here
+  if (item === "itemName") {
+  cart.prototype.splice("itemName")
+  }
+ return cart
 }
 
 function placeOrder(cardNumber) {
