@@ -51,11 +51,7 @@ return total
 }
 
 function removeFromCart(item) {
-  if (item === "itemName") {
-  cart.prototype.splice("itemName")
-  }
- return cart
-}
+  
 
 function placeOrder(cardNumber) {
   // write your code here
