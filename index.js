@@ -51,7 +51,7 @@ return total
 }
 
 function removeFromCart(item) {
-  
+  for(var i in cart)
 
 function placeOrder(cardNumber) {
   // write your code here
