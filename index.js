@@ -52,7 +52,9 @@ return total
 
 function removeFromCart(item) {
   for(var i in cart) {
-    if(cart[i].item === item)
+    if(cart[i].item === item) {
+      
+    }
   }
 
 function placeOrder(cardNumber) {
