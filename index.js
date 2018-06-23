@@ -55,7 +55,7 @@ function removeFromCart(item) {
     if(cart[i].item === item) {
       cart[i].count --;
       if(cart[i].count === 0) {
-        
+        cart.splice()
       }
       break;
      } else
